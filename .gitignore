@@ -1,0 +1,17 @@
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data
+.RData
+
+# User files
+.Ruserdata
+
+# Rstudio files
+.Rproj.user/
+
+# R Environment Variables
+.Renviron
+
+
