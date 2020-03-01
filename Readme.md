@@ -12,10 +12,11 @@ The data is stored in /data folder
 
 ### Requirements
 
-* R version >= 3.5.x
+* R version ~ 3.5.x
 * pacrat >= 0.5.0
+* RTools ~ 3.5
 
-May require RTools installation for your R version as well
+RTools required for installing some packages from source, project may still work without it
 
 ### Installation 
 
