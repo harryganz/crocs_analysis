@@ -15,3 +15,5 @@
 .Renviron
 
 
+packrat/lib*/
+.Rproj.user
