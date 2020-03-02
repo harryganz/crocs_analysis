@@ -8,7 +8,7 @@ questions <- read_csv('./data/question_lookup.csv')
 }
 
 .margin <- function(p, N) {
-  1.96*.sp(p, N) + 1/N
+  1.96*.sp(p, N) + 1/(2*N)
 }
 
 brand_awareness <- survey_data %>% 
