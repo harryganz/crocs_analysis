@@ -16,6 +16,5 @@
 
 # Packrat files
 packrat/lib*/
-packrat/src/
 .Rproj.user
 
