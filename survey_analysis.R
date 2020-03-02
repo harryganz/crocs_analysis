@@ -3,8 +3,12 @@ library(tidyverse)
 survey_data <- read_csv('./data/survey_2020-02-24.csv')
 questions <- read_csv('./data/question_lookup.csv')
 
-.awareness <- function(x) {
-  sum(!is.na(x))/length(x)*100
+.sp <- function(p, N) {
+  sqrt(p*(1-p)/N)
+}
+
+.margin <- function(p, N) {
+  1.96*.sp(p, N) + 1/N
 }
 
 brand_awareness <- survey_data %>% 
@@ -15,11 +19,16 @@ brand_awareness <- survey_data %>%
   select(id, Q1, Q2, Q4) %>% 
   gather(key = "Question", value = "Brand", Q1, Q2, Q4) %>%
   group_by(Question, Brand) %>%
-  summarise(Awareness = length(unique(id))/nrow(survey_data) * 100) %>%
+  summarise(
+    Awareness = round(length(unique(id))/nrow(survey_data) * 100, digits = 2),
+    Margin = round(.margin(Awareness/100, nrow(survey_data))*100, digits = 1)
+  ) %>%
   mutate(Text = questions$Text[questions$Question %in% Question]) %>%
   arrange(Question, desc(Awareness))
 
 purchase_importance <- survey_data %>%
   group_by(Q3) %>%
-  summarise(Percent = length(Q3)/nrow(survey_data)*100)
-names(purchase_importance)[1] <- questions$Text[3]
+  summarise(
+    Percent = round(length(Q3)/nrow(survey_data)*100, digits = 2), 
+    Margin = round(.margin(Percent/100, nrow(survey_data))*100, digits = 1)) %>%
+  rename(`Which of the following is most important to you in selecting athletic footwear?` = Q3)
