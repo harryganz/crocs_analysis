@@ -1,16 +1,5 @@
 source('./survey_analysis.R')
-theme_default <- theme(
-  panel.background = element_rect(fill = 'white', colour = "white"),
-  panel.grid.major = element_line(color = "grey", size = 0.1),
-  panel.grid.minor = element_blank(),
-  axis.line.x = element_line(color = "black"),
-  axis.line.y = element_line(color = "black"),
-  axis.title = element_text(size = 12),
-  plot.title = element_text(hjust = 0.5)
-  )
-suppress_x_grid = theme(
-  panel.grid.major.x = element_blank()
-)
+source('./themes.R')
 p1 <- ggplot(purchase_importance, aes(x = `Which of the following is most important to you in selecting athletic footwear?`, y = Percent)) +
   geom_bar(stat = "identity", fill = "blue") +
   # geom_errorbar(
