@@ -1,4 +1,6 @@
+library(tidyverse)
 library(quanteda)
+library(readr)
 
 products <- read_csv('./data/products_2020-02-21.csv')
 reviews <- read_csv('./data/reviews_2020-02-21.csv') %>% 

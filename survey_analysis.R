@@ -1,4 +1,5 @@
 library(tidyverse)
+library(readr)
 
 survey_data <- read_csv('./data/survey_2020-02-24.csv')
 questions <- read_csv('./data/question_lookup.csv')
