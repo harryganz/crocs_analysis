@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.5.0
-RVersion: 3.5.2
+RVersion: 3.6.0
 Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
@@ -28,6 +28,12 @@ Source: CRAN
 Version: 1.1-2
 Hash: c0d56cd15034f395874c870141870c25
 
+Package: RSpectra
+Source: CRAN
+Version: 0.16-0
+Hash: 6ffd3885ca2526e67ab54234867b5120
+Requires: Rcpp, RcppEigen
+
 Package: Rcpp
 Source: CRAN
 Version: 1.0.3
@@ -37,6 +43,12 @@ Package: RcppArmadillo
 Source: CRAN
 Version: 0.9.850.1.0
 Hash: 0437ee3a3c83178583525e73986c827e
+Requires: Rcpp
+
+Package: RcppEigen
+Source: CRAN
+Version: 0.3.3.7.0
+Hash: 51d5477069dbb800ff89686c6bdd69fc
 Requires: Rcpp
 
 Package: RcppParallel
@@ -77,8 +89,8 @@ Hash: c590d29e555926af053055e23ee79efb
 
 Package: broom
 Source: CRAN
-Version: 0.5.5
-Hash: a1c5c8cff5602b1c70c032f80edab882
+Version: 0.5.4
+Hash: f8ea1c2213697601170be1bace96e9c0
 Requires: backports, dplyr, generics, purrr, reshape2, stringr, tibble,
     tidyr
 
@@ -96,8 +108,8 @@ Requires: rematch, tibble
 
 Package: cli
 Source: CRAN
-Version: 2.0.2
-Hash: 6fc0b39f0fdbe3a025062807019e1180
+Version: 2.0.1
+Hash: 8e710a5f3177f1db9c6138e1dcbdfc30
 Requires: assertthat, crayon, fansi, glue
 
 Package: clipr
@@ -392,11 +404,17 @@ Requires: magrittr, rlang
 
 Package: quanteda
 Source: CRAN
-Version: 2.0.0
-Hash: 8a0b00184800b103c40e23ad6e4a0281
-Requires: Rcpp, RcppArmadillo, RcppParallel, SnowballC, data.table,
-    extrafont, fastmatch, ggplot2, ggrepel, jsonlite, magrittr,
-    network, proxyC, sna, stopwords, stringi, xml2, yaml
+Version: 1.5.2
+Hash: 4558d3e2db680d1643fc72dabe1daade
+Requires: RSpectra, Rcpp, RcppArmadillo, RcppParallel, SnowballC,
+    data.table, extrafont, fastmatch, ggplot2, ggrepel, lubridate,
+    magrittr, network, proxyC, sna, spacyr, stopwords, stringi, xml2,
+    yaml
+
+Package: rappdirs
+Source: CRAN
+Version: 0.3.1
+Hash: 7340cfebc77ad7b107a549a8635e64dd
 
 Package: readr
 Source: CRAN
@@ -427,10 +445,16 @@ Version: 1.4.3
 Hash: 07530ccc44ce1d2e5390d6ae41bafe03
 Requires: Rcpp, plyr, stringr
 
+Package: reticulate
+Source: CRAN
+Version: 1.14
+Hash: c661ac9f2da16aeadcba28d89a5a9e90
+Requires: Rcpp, jsonlite, rappdirs
+
 Package: rlang
 Source: CRAN
-Version: 0.4.5
-Hash: 99d62d0aaf54a9938784f4485efa9933
+Version: 0.4.4
+Hash: 4b627f82e4297bd5bf82a5cb065bbe4a
 
 Package: rmarkdown
 Source: CRAN
@@ -468,6 +492,12 @@ Source: CRAN
 Version: 2.5
 Hash: dc2f1f2cae0e1176f6c586f82a539399
 Requires: network, statnet.common
+
+Package: spacyr
+Source: CRAN
+Version: 1.2
+Hash: 6b9e1265c25cd80bf9fd88097974689d
+Requires: data.table, reticulate
 
 Package: statnet.common
 Source: CRAN
